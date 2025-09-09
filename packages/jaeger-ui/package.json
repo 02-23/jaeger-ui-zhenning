@@ -86,7 +86,9 @@
     "u-basscss": "2.0.1"
   },
   "scripts": {
-    "build": "NODE_ENV=production REACT_APP_VSN_STATE=$(../../scripts/get-tracking-version.js) vite build",
+    "get:version": "node ../../scripts/get-tracking-version.js",
+    "build": "set NODE_ENV=production && set REACT_APP_VSN_STATE=$(npm run get:version --silent) && vite build",
+    "build2": "NODE_ENV=production REACT_APP_VSN_STATE=$(../../scripts/get-tracking-version.js) vite build",
     "coverage": "npm run test-ci -- --coverage",
     "start:ga-debug": "REACT_APP_GA_DEBUG=1 REACT_APP_VSN_STATE=$(../../scripts/get-tracking-version.js) vite",
     "start": "vite",

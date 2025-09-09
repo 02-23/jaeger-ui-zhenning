@@ -17,6 +17,8 @@ import convInputs from './convInputs';
 
 // @ts-ignore
 import LayoutWorker from './layout.worker.bundled.d.ts';
+// 打包使用
+// import LayoutWorker from './layout.worker.bundled';
 
 import {
   ECoordinatorPhase,
